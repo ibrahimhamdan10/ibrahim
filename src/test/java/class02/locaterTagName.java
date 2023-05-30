@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class locaterTagName {
@@ -19,11 +20,10 @@ public class locaterTagName {
 //        get all the links from amazon .com and print them on the console
             List<WebElement> allLinks = driver.findElements(By.tagName("a"));
 
-//        traverse
-            for(WebElement link:allLinks){
+            for(WebElement i :allLinks){
 
-                String linkOfWebsite = link.getAttribute("href");
-                System.out.println(linkOfWebsite);
+              String linkOfWebsite = i.getAttribute("href");
+               System.out.println(linkOfWebsite);
 
             }
 
