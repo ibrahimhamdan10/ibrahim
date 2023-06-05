@@ -1,6 +1,7 @@
 package Utlis;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class commonMethods {
@@ -17,6 +18,11 @@ public class commonMethods {
     public static void closeBrowser(){
 
         driver.quit();
+    }
+
+    public static void sendText (String text, WebElement element){
+        element.clear();
+        element.sendKeys(text);
     }
 
 }

@@ -10,15 +10,21 @@ public class task2 {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.get("https://chercher.tech/practice/frames");
+
         //by id
         driver.switchTo().frame("frame1");
-        //locators
+
+        // WebElement
         WebElement frame3= driver.findElement(By.xpath("//iframe[@id='frame3']"));
         driver.switchTo().frame(frame3);
+
         driver.findElement(By.xpath("//input[@type='checkbox']")).click();
         Thread.sleep(2000);
         driver.switchTo().defaultContent();
+
+        // index
         driver.switchTo().frame(1);
+
         WebElement dropDown=driver.findElement(By.cssSelector("select[id= 'animals']"));
         dropDown.click();
         Select obj = new Select(dropDown);
@@ -31,6 +37,8 @@ public class task2 {
         input.sendKeys("ibrahim ghada");
         Thread.sleep(2000);
         driver.quit();
+
+
 
     }
 }
