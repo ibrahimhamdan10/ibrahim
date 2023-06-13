@@ -1,10 +1,15 @@
 package Utlis;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
@@ -33,6 +38,17 @@ public class CommonMethods {
     public static void closeBrowser() {
         if(driver!=null) {
             driver.quit();
+        }
+    }
+    public static void screenShot(String fileName) throws IOException {
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File screenShot = ts.getScreenshotAs(OutputType.FILE);
+        try {
+
+            FileUtils.copyFile(screenShot, new File(fileName));
+
+        }catch (IOException e){
+            e.printStackTrace();
         }
     }
 

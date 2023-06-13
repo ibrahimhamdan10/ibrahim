@@ -23,6 +23,7 @@ public class dropDowns {
         WebElement days = driver.findElement(By.xpath("//select[@id='day']"));
 //        2.create an object of the select class and pass in the parameters the element dropdown
         Select sel = new Select(days);
+        
 
 //        3.use method provided in select class to select the option that u desire
         sel.selectByVisibleText("8");

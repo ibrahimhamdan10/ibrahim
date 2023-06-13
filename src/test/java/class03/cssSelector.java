@@ -16,5 +16,7 @@ public class cssSelector {
         WebElement firstName=driver.findElement(By.cssSelector("input[name='firstname']"));
         firstName.sendKeys("ibrahim");
         driver.findElement(By.xpath("//img[@src='https://static.xx.fbcdn.net/rsrc.php/v3/yO/r/zgulV2zGm8t.png']")).click();
+
+
     }
 }
